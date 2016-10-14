@@ -11,7 +11,7 @@ import spring.java.service.impl.ServiceManagerImpl;
 @Configuration
 public class ServiceConfig {
 	
-	@Bean
+		@Bean
 	public EmailService emailService() {
 		
 		return new EmailServiceImpl();
