@@ -7,13 +7,13 @@ import spring.java.domain.DataSource;
 
 @Configuration
 public class DBConfig {
-	
-	@Bean
-	public DataSource dataSource() {
-		DataSource dataSource = new DataSource();
-		dataSource.setUsername("test username");
-		dataSource.setPassword("test password");
-		return dataSource;
-	}
-	
+
+    @Bean
+    public DataSource dataSource() {
+        DataSource dataSource = new DataSource();
+        dataSource.setUsername("test username");
+        dataSource.setPassword("test password");
+        return dataSource;
+    }
+
 }

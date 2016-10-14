@@ -7,15 +7,14 @@ import spring.java.domain.BlogPost;
 import spring.java.service.BlogPostService;
 
 public class WordPressBlogServiceImpl implements BlogPostService {
-	
-	private static final Logger LOGGER = LoggerFactory.getLogger(WordPressBlogServiceImpl.class);
 
-	@Override
-	public void savePost(BlogPost blogPost) {
-		
-		LOGGER.debug("WordPressBlogPostServiceImpl savePost is called");
-		
-	}
-	
+    private static final Logger LOGGER = LoggerFactory.getLogger(WordPressBlogServiceImpl.class);
+
+    @Override
+    public void savePost(BlogPost blogPost) {
+
+        LOGGER.debug("WordPressBlogPostServiceImpl savePost is called");
+
+    }
 
 }

@@ -10,15 +10,15 @@ import spring.java.service.impl.ServiceManagerImpl;
 
 @Configuration
 public class ServiceConfig {
-	
-		@Bean
-	public EmailService emailService() {
-		
-		return new EmailServiceImpl();
-	}
-	
-	@Bean
-	public ServiceManager serviceManager () {
-		return new ServiceManagerImpl();
-	}
+
+    @Bean
+    public EmailService emailService() {
+
+        return new EmailServiceImpl();
+    }
+
+    @Bean
+    public ServiceManager serviceManager() {
+        return new ServiceManagerImpl();
+    }
 }

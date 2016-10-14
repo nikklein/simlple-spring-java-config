@@ -14,37 +14,37 @@ import spring.java.service.ServiceManager;
 
 public class MainApplication {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(MainApplication.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MainApplication.class);
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(JavaConfig.class);
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(JavaConfig.class);
 
-		// BlogPostService blogPostService =
-		// applicationContext.getBean(BlogPostService.class);
+        // BlogPostService blogPostService =
+        // applicationContext.getBean(BlogPostService.class);
 
-		BlogPostService blogPostService = (BlogPostService) applicationContext.getBean("blogPostService");
+        BlogPostService blogPostService = (BlogPostService) applicationContext.getBean("blogPostService");
 
-		BlogPost blogPost = new BlogPost();
-		blogPost.setId(1L);
-		blogPost.setTitle("JavaSpring MVC Java Config");
+        BlogPost blogPost = new BlogPost();
+        blogPost.setId(1L);
+        blogPost.setTitle("JavaSpring MVC Java Config");
 
-		blogPostService.savePost(blogPost);
+        blogPostService.savePost(blogPost);
 
-		DataSource dataSource = applicationContext.getBean(DataSource.class);
+        DataSource dataSource = applicationContext.getBean(DataSource.class);
 
-		LOGGER.debug("dataSource: username " + dataSource.getUsername());
-		LOGGER.debug("dataSource: password " + dataSource.getPassword());
+        LOGGER.debug("dataSource: username " + dataSource.getUsername());
+        LOGGER.debug("dataSource: password " + dataSource.getPassword());
 
-		EmailService emailService = applicationContext.getBean(EmailService.class);
+        EmailService emailService = applicationContext.getBean(EmailService.class);
 
-		emailService.sendEmail();
+        emailService.sendEmail();
 
-		ServiceManager serviceManager = applicationContext.getBean(ServiceManager.class);
-		serviceManager.sendBlogPost(blogPost);
+        ServiceManager serviceManager = applicationContext.getBean(ServiceManager.class);
+        serviceManager.sendBlogPost(blogPost);
 
-		((ConfigurableApplicationContext) applicationContext).close();
+        ((ConfigurableApplicationContext) applicationContext).close();
 
-	}
+    }
 
 }

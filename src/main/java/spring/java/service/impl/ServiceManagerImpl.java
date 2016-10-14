@@ -9,14 +9,13 @@ import spring.java.service.ServiceManager;
 
 public class ServiceManagerImpl implements ServiceManager {
 
-	@Autowired
-	@Qualifier("MediumBlogPostService")
-	private BlogPostService blogPostService ;
-	
-	@Override
-	public void sendBlogPost(BlogPost blogPost) {
-		blogPostService.savePost(blogPost);
-	}
+    @Autowired
+    @Qualifier("MediumBlogPostService")
+    private BlogPostService blogPostService;
 
-	
+    @Override
+    public void sendBlogPost(BlogPost blogPost) {
+        blogPostService.savePost(blogPost);
+    }
+
 }

@@ -10,24 +10,22 @@ import spring.java.service.BlogPostService;
 import spring.java.service.EmailService;
 
 public class BlogPostServiceImpl implements BlogPostService {
-	
-	private static final Logger LOGGER = LoggerFactory.getLogger(BlogPostServiceImpl.class);
-	
-	@Autowired
-	private DataSource dataSource;
-	
-	@Autowired
-	private EmailService emailService;
-	
-	@Override
-	public void savePost(BlogPost blogPost) {
-		
-		LOGGER.debug("BlogPostServiceImpl: " + dataSource.getPassword());
-		LOGGER.debug("BlogPostServiceImpl: savePost is called");
-		
-		emailService.sendEmail();
-	}
 
-	 
+    private static final Logger LOGGER = LoggerFactory.getLogger(BlogPostServiceImpl.class);
+
+    @Autowired
+    private DataSource dataSource;
+
+    @Autowired
+    private EmailService emailService;
+
+    @Override
+    public void savePost(BlogPost blogPost) {
+
+        LOGGER.debug("BlogPostServiceImpl: " + dataSource.getPassword());
+        LOGGER.debug("BlogPostServiceImpl: savePost is called");
+
+        emailService.sendEmail();
+    }
+
 }
- 
